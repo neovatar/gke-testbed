@@ -3,7 +3,7 @@ resource "google_container_cluster" "gke" {
   zone               = "europe-west3-a"
   remove_default_node_pool = true
 
-  min_master_version = "1.11.2-gke.18"
+  min_master_version = "1.11.6-gke.3"
 
   lifecycle {
     ignore_changes = ["node_pool"]
@@ -33,7 +33,7 @@ resource "google_container_node_pool" "primary_pool" {
   node_count = "2"
 
   node_config {
-    machine_type = "n1-standard-1"
+    machine_type = "n1-standard-2"
     oauth_scopes = [    
       "https://www.googleapis.com/auth/devstorage.read_only",
       "https://www.googleapis.com/auth/logging.write",
